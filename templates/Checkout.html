@@ -5,6 +5,7 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
+
 <h2>Pay ₹5</h2>
 <button id="rzp-button">Pay Now</button>
 
@@ -16,8 +17,8 @@ var options = {
     "name": "My App",
     "description": "Token Payment",
     "order_id": "{{ order['id'] }}",
+
     "handler": function (response){
-        // Post payment_id to backend to generate token
         var form = document.createElement("form");
         form.method = "POST";
         form.action = "/payment-success";
@@ -30,9 +31,6 @@ var options = {
         form.appendChild(input);
         document.body.appendChild(form);
         form.submit();
-    },
-    "theme": {
-        "color": "#3399cc"
     }
 };
 
@@ -42,5 +40,6 @@ document.getElementById('rzp-button').onclick = function(e){
     e.preventDefault();
 }
 </script>
+
 </body>
 </html>
