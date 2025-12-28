@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay ₹5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="card">
+    <h2>Complete Payment</h2>
+    <!-- Use GET to match backend route -->
+    <form action="/create-order">
+        <button type="submit" id="payBtn">Pay Now</button>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='js/pay.js') }}"></script>
+</body>
+</html>
